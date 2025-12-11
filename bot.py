@@ -94,6 +94,14 @@ def calculate_supertrend(df_input, period=ATR_PERIOD, multiplier=MULTIPLIER):
 def run_forward_test():
     df = fetch_latest_data()
     df = calculate_supertrend(df)
+
+    # Check if the last candle is "today" (incomplete) and drop it if so
+    last_date = df.index[-1].date()
+    today_utc = datetime.utcnow().date()
+    
+    if last_date == today_utc:
+        print(f"Dropping incomplete candle for {last_date} (Today UTC)")
+        df = df.iloc[:-1]
     
     latest = df.iloc[-1]
     prev = df.iloc[-2]
