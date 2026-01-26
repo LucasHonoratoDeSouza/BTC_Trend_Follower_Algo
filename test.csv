@@ -1,2 +1,3 @@
 symbol,side,quantity,price,timestamp,asset_type,order_mode,leverage
 BTCUSDT,BUY,0.001,89181.99,2026-01-22T00:00:00Z,CRYPTO,SPOT,1
+ETHUSDT,SELL,0.01,4000.00,2026-01-23T00:00:00Z,CRYPTO,SPOT,1
